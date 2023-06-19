@@ -18,9 +18,6 @@ int Dicionario::tamanho() {
 }
 
 bool Dicionario::pertence(string chave) {
-    if (elementos_.empty()) {
-        throw DicionarioVazio{"Não foi possível realizar a operação: Dicionário vazio"};
-    }
     for (auto it = elementos_.begin(); it != elementos_.end(); it++) {
         if (it->chave == chave) {
             return true;
@@ -32,7 +29,7 @@ bool Dicionario::pertence(string chave) {
 string Dicionario::menor() {
     if (elementos_.empty()) {
         throw DicionarioVazio{"Não foi possível realizar a operação: Dicionário vazio"};
-    } else {
+    } 
         string comparative = elementos_.begin()->chave;
         for (auto it = elementos_.begin(); it != elementos_.end(); it++) {
             string aux = it->chave;
@@ -42,13 +39,8 @@ string Dicionario::menor() {
         }
         return comparative;
     }
-}
 
 string Dicionario::valor(string chave) {
-    if (elementos_.empty()) {
-        throw DicionarioVazio{"Não foi possível realizar a operação: Dicionário vazio"};
-    }
-
     if (!pertence(chave)) {
         ChaveInexistente x;
         x.chave = chave;
@@ -75,10 +67,6 @@ void Dicionario::Inserir(string chave, string valor) {
 }
 
 void Dicionario::Remover(string chave) {
-    if (elementos_.empty()) {
-        throw DicionarioVazio{"Não foi possível realizar a operação: Dicionário vazio"};
-    }
-
     if (!pertence(chave)) {
         ChaveInexistente x;
         x.chave = chave;
@@ -94,10 +82,6 @@ void Dicionario::Remover(string chave) {
 }
 
 void Dicionario::Alterar(string chave, string valor) {
-    if (elementos_.empty()) {
-        throw DicionarioVazio{"Não foi possível realizar a operação: Dicionário vazio"};
-    }
-
     if (!pertence(chave)) {
         ChaveInexistente x;
         x.chave = chave;
