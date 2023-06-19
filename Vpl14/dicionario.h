@@ -7,11 +7,30 @@
 using std::list;
 using std::string;
 
+//Indica que o dicionário está vazio
+struct DicionarioVazio{
+ string mensagem;  
+  };
+
+// Indica que uma determinada chave não está no dicionário.
+struct ChaveInexistente{
+    string chave;
+  };
+
+// Indica que uma determinada chave já se encontra no dicionário.
+struct ChaveRepetida{
+    string chave;
+  };
+
+
+
+
 // Implementa um dicionário que mapeia uma chave (do tipo string)
 // a um valor (também do tipo string).
 // As chaves são únicas, e estão dispostas em qualquer ordem na lista. 
 class Dicionario {
  public:
+  
   // Cria um dicionário vazio.
   Dicionario();
 
